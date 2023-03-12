@@ -2,7 +2,10 @@
 
 import streamlit as st
 st.text("ML APP1")
+
 a = ['col1','col2','col3','col4','col5']
-options = st.multiselect(
-    'What are your favorite colors',
-    a)
+num_opt = st.multiselect('What are your numerical columns',a)
+cat_opt = st.multiselect('What are your categorical columns',a)
+date_opt = st.multiselect('What are your datetime columns',a)
+
+
