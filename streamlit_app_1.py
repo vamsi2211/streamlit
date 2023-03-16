@@ -37,10 +37,15 @@
 #     st.success('The output is this x')
 
 
+import sys
+import subprocess
+
+# implement pip as a subprocess:
+subprocess.check_call([sys.executable, '-m', 'pip', 'install', 
+'streamlit-lottie'])
 
 
-
-!pip install streamlit-lottie
+# !pip install streamlit-lottie
 
 import pickle
 import streamlit as st 
