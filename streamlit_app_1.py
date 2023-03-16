@@ -71,8 +71,8 @@ st.title("Auto Insurence Claim Fraud Detection")
   
 st_lottie(url_json)
 
-pickle_in = open("classifier.pkl","rb")
-classifier=pickle.load(pickle_in)
+# pickle_in = open("classifier.pkl","rb")
+# classifier=pickle.load(pickle_in)
 
 
 def predict_note_authentication(CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,\
