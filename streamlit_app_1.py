@@ -40,8 +40,7 @@
 
 
 
-!
-pip install streamlit-lottie
+!pip install streamlit-lottie
 
 import pickle
 import streamlit as st 
