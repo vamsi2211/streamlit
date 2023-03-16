@@ -25,4 +25,14 @@ with st.form(key='columns_in_form'):
 
     submitButton = st.form_submit_button(label = 'Calculate')
 
+form = st.form(key="my-form")
+c1, c2 = st.columns(2)
+with c1:
+    sel1= form.selectbox("Report Type", ("normal", "full"))
+with c2:
+    track= form.text_input("enter track no").upper()
+submit = form.form_submit_button("Generate Report")
+
+if submit:
+    with st.spinner('Generating Report....'):
 
