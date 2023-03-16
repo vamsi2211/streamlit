@@ -10,7 +10,7 @@ train = pd.DataFrame({'col1':list(range(10)),'col2':list(range(10)),'col3':list(
 a = train.columns
 num_opt = st.multiselect('What are your numerical columns',a)
 cat_opt = st.multiselect('What are your categorical columns',[x for x in a if x not in num_opt])
-date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in cat_opt])
+date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in num_opt+cat_opt])
 st.write('Numerical columns:',num_opt,'Categorical columns:',cat_opt,'date columns:',date_opt)
 
 
