@@ -34,5 +34,5 @@ with c2:
 submit = form.form_submit_button("Generate Report")
 
 if submit:
-    with st.spinner('Generating Report....'):
+    with st.spinner('Generating Report....')
 
