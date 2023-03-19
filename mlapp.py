@@ -67,6 +67,7 @@ st.text("ML APP1")
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
                       'col3':list(range(10)),
+                      'col4':"~!@#$%^&*".split()
                       'col5':[chr(x) for x in range(65,75)],
                       'col6':[chr(x) for x in range(97,97+10)]
                      })
