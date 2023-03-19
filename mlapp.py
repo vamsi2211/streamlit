@@ -67,6 +67,12 @@ def type_cast(data,cat=None,num=None,da_ti=None):
 
 st.set_page_config(page_title="MLAPP",page_icon="🧑‍💻", layout="centered")
 st.text("ML APP1")
+
+spectra = st.file_uploader("upload file", type={"csv",'xlsx'})
+if spectra is not None:
+    spectra_df = pd.read_csv(spectra)
+st.write(spectra_df)
+
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
                       'col3':list(range(10)),
