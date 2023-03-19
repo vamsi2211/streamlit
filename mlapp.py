@@ -70,7 +70,7 @@ st.text("ML APP1")
 
 spectra = st.file_uploader("upload file", type={"csv",'xlsx'})
 if spectra is not None:
-    spectra_df = pd.read_csv(spectra)
+    train = pd.read_csv(spectra)
 st.write(spectra_df)
 
 train = pd.DataFrame({'col1':list(range(10)),
