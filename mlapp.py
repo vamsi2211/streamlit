@@ -77,7 +77,7 @@ num_opt = st.multiselect('What are your numerical columns',a)
 cat_opt = st.multiselect('What are your categorical columns',[x for x in a if x not in num_opt])
 date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in num_opt+cat_opt])
 
-type_cast(train,cat=cat_opt,num=num_opt):
+type_cast(train,cat=cat_opt,num=num_opt)
 st.dataframe(stats(train), use_container_width=True)
 st.dataframe(null_unique(train), use_container_width=True)
 if submit:
