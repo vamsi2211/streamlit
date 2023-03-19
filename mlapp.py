@@ -3,17 +3,8 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-#______________________________________________________________________
-def info_shape(data):
-  """
-  Parameters  :   Dataframe
-  Return      :   info(), shape()
-  """
-  print(f"shape:{data.shape}")
-  return [data.info()]
-
-#______________________________________________________________________
 def stats(data):
   """
   Parameters  :   Dataframe
@@ -69,10 +60,7 @@ def type_cast(data,cat=None,num=None,da_ti=None):
   for k in da_ti:
     data[k] = pd.to_datetime(data[k])
 
-
-
-
-
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 st.set_page_config(page_title="MLAPP",page_icon="🧑‍💻", layout="centered")
 st.text("ML APP1")
@@ -80,8 +68,9 @@ train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
                       'col3':list(range(10)),
                       'col5':[chr(x) for x in range(65,75)],
-                      'col6':[chr(x) for x in range(97,97+10)]})
-st.dataframe(info_shape(train), use_container_width=True)
+                      'col6':[chr(x) for x in range(97,97+10)]
+                     })
+st.write(info_shape(train), use_container_width=True)
 st.dataframe(stats(train), use_container_width=True)
 st.dataframe(null_unique(train), use_container_width=True)
 
