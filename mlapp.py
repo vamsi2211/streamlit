@@ -70,7 +70,7 @@ train = pd.DataFrame({'col1':list(range(10)),
                       'col5':[chr(x) for x in range(65,75)],
                       'col6':[chr(x) for x in range(97,97+10)]
                      })
-st.write(info_shape(train), use_container_width=True)
+st.write(info_shape(train))
 st.dataframe(stats(train), use_container_width=True)
 st.dataframe(null_unique(train), use_container_width=True)
 
