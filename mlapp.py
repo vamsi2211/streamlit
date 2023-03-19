@@ -12,8 +12,8 @@ def stats(data):
   in a single dataframe for convinient and compact representation
   """
   col_dtype=pd.DataFrame(data.dtypes,columns=['dtype'])
-  col_desc=data.describe()
-  return pd.concat([data.head(),data.tail(),col_dtype.T,col_desc])
+  col_desc=data.describe('all')
+  return pd.concat([data.head(3),data.tail(3),col_dtype.T,col_desc])
   
 #_____________________________________________________________________
 def null_unique(data):
@@ -71,14 +71,14 @@ train = pd.DataFrame({'col1':list(range(10)),
                       'col5':[chr(x) for x in range(65,75)],
                       'col6':[chr(x) for x in range(97,97+10)]
                      })
-# st.write(info_shape(train))
-st.dataframe(stats(train), use_container_width=True)
-st.dataframe(null_unique(train), use_container_width=True)
 
 a = train.columns
 num_opt = st.multiselect('What are your numerical columns',a)
 cat_opt = st.multiselect('What are your categorical columns',[x for x in a if x not in num_opt])
 date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in num_opt+cat_opt])
-st.write('Numerical columns:',num_opt,'Categorical columns:',cat_opt,'date columns:',date_opt)
+
+type_cast(train,cat=cat_opt,num=num_opt):
+st.dataframe(stats(train), use_container_width=True)
+st.dataframe(null_unique(train), use_container_width=True)
 if submit:
     st.success('The output is this x')
