@@ -53,12 +53,15 @@ def type_cast(data,cat=None,num=None,da_ti=None):
   Parameters: Dataframe, list of column name in dataframe to be converted to category , list of column name in dataframe to be converted to int64, list of column name in dataframe to be converted to datetime64[ns]
   Return    : Modified dataframe of given datatypes of corresponding columns list
   """
-  for i in cat:
-    data[i] = data[i].astype('category')
-  for j in num:
-    data[j] = pd.to_numeric(data[j])
-  for k in da_ti:
-    data[k] = pd.to_datetime(data[k])
+  if cat!=None:
+    for i in cat:
+      data[i] = data[i].astype('category')
+  if num!=None:
+    for j in num:
+      data[j] = pd.to_numeric(data[j])
+  if da_ti!=None
+    for k in da_ti:
+      data[k] = pd.to_datetime(data[k])
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
