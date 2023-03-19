@@ -77,7 +77,6 @@ num_opt = st.multiselect('What are your numerical columns',a)
 cat_opt = st.multiselect('What are your categorical columns',[x for x in a if x not in num_opt])
 date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in num_opt+cat_opt])
 
-l
 def show():
   st.write(num_opt)
   st.write(type(num_opt))
