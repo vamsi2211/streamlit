@@ -76,10 +76,14 @@ a = train.columns
 num_opt = st.multiselect('What are your numerical columns',a)
 cat_opt = st.multiselect('What are your categorical columns',[x for x in a if x not in num_opt])
 date_opt = st.multiselect('What are your datetime columns',[x for x in a if x not in num_opt+cat_opt])
+
+l
 def show():
-  type_cast(train,cat=cat_opt,num=num_opt,da_ti=None)
-  st.dataframe(stats(train), use_container_width=True)
-  st.dataframe(null_unique(train), use_container_width=True)
+  st.write(num_opt)
+  st.write(type(num_opt))
+#   type_cast(train,cat=cat_opt,num=num_opt,da_ti=None)
+#   st.dataframe(stats(train), use_container_width=True)
+#   st.dataframe(null_unique(train), use_container_width=True)
 if st.button('GO'):
     show()
 
