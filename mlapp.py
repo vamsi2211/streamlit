@@ -80,7 +80,7 @@ def show():
   type_cast(train,cat=cat_opt,num=num_opt,da_ti=None)
   st.dataframe(stats(train), use_container_width=True)
   st.dataframe(null_unique(train), use_container_width=True)
-if submit:
+if st.button('GO'):
     show()
 
 
