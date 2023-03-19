@@ -59,7 +59,7 @@ def type_cast(data,cat=None,num=None,da_ti=None):
   if num!=None:
     for j in num:
       data[j] = pd.to_numeric(data[j])
-  if da_ti!=None
+  if da_ti!=None:
     for k in da_ti:
       data[k] = pd.to_datetime(data[k])
 
