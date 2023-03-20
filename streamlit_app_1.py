@@ -45,7 +45,7 @@ VehicleModel,VehicleMake,VehicleYOM]])
     return prediction
 
 def main():
-    st.title("Insurer Details")
+    =st.title("Insurer Details")
     with st.form(key='columns_in_form1'):
         d1, d2, d3, d4 = st.columns(4)
         with d1:
@@ -161,15 +161,15 @@ def main():
             VehicleYOM = st.text_input("VehicleYOM")
         submitButton = st.form_submit_button(label = 'Submit9')
 
-  test = pd.DataFrame([CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
-  PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
-  InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
-  PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM],\
-               columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
-  PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
-  InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
-  PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM'.split(','))
-  st.dataframe(test, use_container_width=True)
+    test = pd.DataFrame([CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
+    PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
+    InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
+    PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM],\
+                 columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
+    PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
+    InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
+    PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM'.split(','))
+    st.dataframe(test, use_container_width=True)
 
     
  # assigning int and removing insured zip code from int float cols to num_cols
