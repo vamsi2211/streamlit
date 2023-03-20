@@ -194,25 +194,21 @@ def main():
     test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
     
+#     with open('imputer.pkl', 'rb')as f1:
+#         imputer = pickle.load(f1)
+#     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
+#     with open('imputer1.pkl', 'rb')as f2:
+#         imputer1 = pickle.load(f2)
+#     real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
+#     df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis=1 ,inplace =True)
     
-    
-    with open('imputer.pkl', 'rb')as f1:
-        imputer = pickle.load(f1)
-    real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
-    with open('imputer1.pkl', 'rb')as f2:
-        imputer1 = pickle.load(f2)
-    real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
-    df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis=1 ,inplace =True)
-    
-    df_test_final = pd.concat([df_test_final,real_test_df_vehiclemake_witness_gender, real_test_df_premium_time],axis=1)
-    ord_cols = ["SeverityOfIncident","BodilyInjuries","NumberOfVehicles","Witnesses","InsuredEducationLevel"]
-    nom_cols = ["TypeOfIncident","TypeOfCollission","AuthoritiesContacted","InsuredOccupation","InsuredHobbies","IncidentCity","IncidentState","InsurancePolicyState","InsuredGender","InsuredRelationship",'Policy_CombinedSingleLimit',"PropertyDamage",]
-    num_cols = [ "AmountOfInjuryClaim","AmountOfPropertyClaim","InsuredAge","CustomerLoyaltyPeriod","Policy_Deductible","PolicyAnnualPremium","IncidentTime","AmountOfVehicleDamage" ,"CapitalGains","CapitalLoss","UmbrellaLimit"]
+#     df_test_final = pd.concat([df_test_final,real_test_df_vehiclemake_witness_gender, real_test_df_premium_time],axis=1)
+#     ord_cols = ["SeverityOfIncident","BodilyInjuries","NumberOfVehicles","Witnesses","InsuredEducationLevel"]
+#     nom_cols = ["TypeOfIncident","TypeOfCollission","AuthoritiesContacted","InsuredOccupation","InsuredHobbies","IncidentCity","IncidentState","InsurancePolicyState","InsuredGender","InsuredRelationship",'Policy_CombinedSingleLimit',"PropertyDamage",]
+#     num_cols = [ "AmountOfInjuryClaim","AmountOfPropertyClaim","InsuredAge","CustomerLoyaltyPeriod","Policy_Deductible","PolicyAnnualPremium","IncidentTime","AmountOfVehicleDamage" ,"CapitalGains","CapitalLoss","UmbrellaLimit"]
     st.dataframe(df_test_final, use_container_width=True)
 
-
-
-    result=""
+    result=f"{CustomerID} seems to be ---{np.random.rand('Fraud, 'Not Fraud')}')
     if st.button("Predict"):
 #     result=predict_note_authentication(CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM)
       st.success('The output is {}'.format(result))
