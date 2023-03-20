@@ -5,53 +5,55 @@ import pickle
 import pickle
 import streamlit as st 
 
-import json
-import requests
+# import json
+# import requests
   
-from streamlit_lottie import st_lottie
+# from streamlit_lottie import st_lottie
   
-url = requests.get(
-    "https://assets2.lottiefiles.com/packages/lf20_mDnmhAgZkb.json")
-# Creating a blank dictionary to store JSON file,
-# as their structure is similar to Python Dictionary
-url_json = dict()
+# url = requests.get(
+#     "https://assets2.lottiefiles.com/packages/lf20_mDnmhAgZkb.json")
+# # Creating a blank dictionary to store JSON file,
+# # as their structure is similar to Python Dictionary
+# url_json = dict()
   
-if url.status_code == 200:
-    url_json = url.json()
-else:
-    print("Error in the URL")
+# if url.status_code == 200:
+#     url_json = url.json()
+# else:
+#     print("Error in the URL")
   
   
-st.title("Auto Insurence Claim Fraud Detection")
+# st.title("Auto Insurence Claim Fraud Detection")
   
-st_lottie(url_json)
+# st_lottie(url_json)
 
 # pickle_in = open("classifier.pkl","rb")
 # classifier=pickle.load(pickle_in)
 
 
-def predict_note_authentication(CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,\
-SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddresse,IncidentTime,NumberOfVehicles,\
-PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,\
-AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,\
-CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,\
-Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,\
-VehicleModel,VehicleMake,VehicleYOM):
-    prediction=classifier.predict([[CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,\
-SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
-PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,\
-AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,\
-CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,\
-Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,\
-VehicleModel,VehicleMake,VehicleYOM]])
-    print(prediction)
-    return prediction
+# def predict_note_authentication(CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,\
+# SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddresse,IncidentTime,NumberOfVehicles,\
+# PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,\
+# AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,\
+# CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,\
+# Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,\
+# VehicleModel,VehicleMake,VehicleYOM):
+#     prediction=classifier.predict([[CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,\
+# SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
+# PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,\
+# AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,\
+# CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,\
+# Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,\
+# VehicleModel,VehicleMake,VehicleYOM]])
+#     print(prediction)
+#     return prediction
+
+
 def main():
     st.title("Insurer Details")
     with st.form(key='columns_in_form1'):
       d1, d2, d3, d4 = st.columns(4)
       with d1:
-          CustomerID = st.text_input("CustomerID")
+          CustomerID = st.text_input("CustomerID",value=1001)
       with d2:
           DateOfIncident = st.text_input("DateOfIncident")
       with d3:
