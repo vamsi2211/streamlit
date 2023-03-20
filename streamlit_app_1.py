@@ -196,7 +196,7 @@ def main():
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
     
     imp0 = open("imputer.pkl","rb")
-    imputer0=pickle.load(imp)
+    imputer0=pickle.load(imp0)
     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer0.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
     imp1 = open("imputer1.pkl","rb")
     imputer1=pickle.load(imp1)
