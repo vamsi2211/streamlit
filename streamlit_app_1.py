@@ -170,7 +170,7 @@ def main():
     int_cols = list(df_test_final.select_dtypes(include = "int").columns)
     int_cols.remove("InsuredZipCode")
     int_cols.remove("InsurancePolicyNumber")
-    float_cols = list(df_train_final.select_dtypes(include = "float").columns)
+    float_cols = list(df_test_final.select_dtypes(include = "float").columns)
     num_cols = int_cols+float_cols
     
     
