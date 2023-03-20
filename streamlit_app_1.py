@@ -201,8 +201,9 @@ def main():
     imp1 = open("imputer1.pkl","rb")
     imputer1=pickle.load(imp1)
     real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
-    df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis =1 ,inplace =True)
-    df_test_final = pd.concat([df_test_final,    real_test_df_vehiclemake_witness_gender, real_test_df_premium_time],axis =1)
+    df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis=1 ,inplace =True)
+    
+    df_test_final = pd.concat([df_test_final,real_test_df_vehiclemake_witness_gender, real_test_df_premium_time],axis=1)
     ord_cols = ["SeverityOfIncident","BodilyInjuries","NumberOfVehicles","Witnesses","InsuredEducationLevel"]
     nom_cols = ["TypeOfIncident","TypeOfCollission","AuthoritiesContacted","InsuredOccupation","InsuredHobbies","IncidentCity","IncidentState","InsurancePolicyState","InsuredGender","InsuredRelationship",'Policy_CombinedSingleLimit',"PropertyDamage",]
     num_cols = [ "AmountOfInjuryClaim","AmountOfPropertyClaim","InsuredAge","CustomerLoyaltyPeriod","Policy_Deductible","PolicyAnnualPremium","IncidentTime","AmountOfVehicleDamage" ,"CapitalGains","CapitalLoss","UmbrellaLimit"]
