@@ -195,9 +195,9 @@ def main():
     test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
     
-    imp0 = open("imputer.pkl","rb")
-    imputer0=pickle.load(imp0)
-    real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer0.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
+    imp = open("imputer.pkl","rb")
+    imputer=pickle.load(imp)
+    real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
     imp1 = open("imputer1.pkl","rb")
     imputer1=pickle.load(imp1)
     real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
