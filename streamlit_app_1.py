@@ -62,7 +62,7 @@ def main():
 
 
     with st.form(key='columns_in_form2'):
-      c1, c2, c3, c4, c5 = st.columns()
+      c1, c2, c3, c4, c5 = st.columns(5)
       with c1:
           SeverityOfIncident = st.text_input("SeverityOfIncident")
       with c2:
