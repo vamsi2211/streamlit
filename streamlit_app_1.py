@@ -193,10 +193,14 @@ def main():
     
     test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
-    imputer = load_object('imputer.pkl','rb')
+    
+    
+    
+    with open('imputer.pkl', 'rb')as f1:
+        imputer = pickle.load(f1)
     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
-    imp1 = open("imputer1.pkl",'rb')
-    imputer1=pickle.load(imp1)
+    with open('imputer1.pkl', 'rb')as f2:
+        imputer1 = pickle.load(f2)
     real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
     df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis=1 ,inplace =True)
     
