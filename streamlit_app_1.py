@@ -108,7 +108,7 @@ def main():
       with z1:
           InsuredAge = st.number_input("InsuredAge",value=35)
       with z2:
-          InsuredZipCode = st.number_input("InsuredZipCode",value='454776')
+          InsuredZipCode = st.number_input("InsuredZipCode",value=454776)
       with z3:
           InsuredGender = st.text_input("InsuredGender",value='MALE')
       with z4:
