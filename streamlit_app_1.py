@@ -174,32 +174,7 @@ def main():
     num_cols = int_cols+float_cols
     
     
-    cat_cols_test = ['SeverityOfIncident',
-   'IncidentAddress',
-   'InsuredRelationship',
-   'AuthoritiesContacted',
-   'InsuredOccupation',
-   'InsurancePolicyState',
-   'VehicleMake',
-   'TypeOfIncident',
-   'TypeOfCollission',
-   'CustomerID',
-   'InsuredHobbies',
-   'VehicleYOM',
-   'DateOfPolicyCoverage',
-   'Country',
-   'InsuredGender',
-   'InsurancePolicyNumber',
-   'VehicleID',
-   'IncidentCity',
-   'PropertyDamage',
-   'PoliceReport',
-   'VehicleModel',
-   'IncidentState',
-   'Policy_CombinedSingleLimit',
-   'InsuredEducationLevel',
-   'DateOfIncident',
-   'InsuredZipCode']
+    cat_cols_test = ['SeverityOfIncident','IncidentAddress','InsuredRelationship','AuthoritiesContacted','InsuredOccupation','InsurancePolicyState','VehicleMake','TypeOfIncident','TypeOfCollission','CustomerID','InsuredHobbies','VehicleYOM','DateOfPolicyCoverage','Country','InsuredGender','InsurancePolicyNumber','VehicleID','IncidentCity','PropertyDamage','PoliceReport','VehicleModel','IncidentState','Policy_CombinedSingleLimit','InsuredEducationLevel','DateOfIncident','InsuredZipCode']
     
     
     from datetime import datetime
