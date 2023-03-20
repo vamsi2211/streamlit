@@ -108,7 +108,7 @@ def main():
       with z1:
           InsuredAge = st.number_input("InsuredAge",value=35)
       with z2:
-          InsuredZipCode = st.text_input("InsuredZipCode",value='454776')
+          InsuredZipCode = st.number_input("InsuredZipCode",value='454776')
       with z3:
           InsuredGender = st.text_input("InsuredGender",value='MALE')
       with z4:
@@ -130,7 +130,7 @@ def main():
     with st.form(key='columns_in_form7'):
       z1, z2, z3, z4 = st.columns(4)
       with z1:
-          InsurancePolicyNumber = st.text_input("InsurancePolicyNumber",value=110122)
+          InsurancePolicyNumber = st.number_input("InsurancePolicyNumber",value=110122)
       with z2:
           CustomerLoyaltyPeriod = st.number_input("CustomerLoyaltyPeriod",value=328)
       with z3:
