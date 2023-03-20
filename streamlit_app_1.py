@@ -194,9 +194,10 @@ def main():
     
     test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
-    
-    imp = open("imputer.pkl","rb")
-    imputer=pickle.load(imp)
+    def load_object(filename):
+    with open(filename, 'rb') as output:
+        return pickle.load(output)
+    imputer = load_object('imputer.pkl')
     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
     imp1 = open("imputer1.pkl","rb")
     imputer1=pickle.load(imp1)
