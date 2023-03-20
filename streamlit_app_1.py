@@ -174,7 +174,7 @@ def main():
     num_cols = int_cols+float_cols
     
     
-    cat_cols_test = ['SeverityOfIncident','IncidentAddress','InsuredRelationship','AuthoritiesContacted','InsuredOccupation','InsurancePolicyState','VehicleMake','TypeOfIncident','TypeOfCollission','CustomerID','InsuredHobbies','VehicleYOM','DateOfPolicyCoverage','Country','InsuredGender','InsurancePolicyNumber','VehicleID','IncidentCity','PropertyDamage','PoliceReport','VehicleModel','IncidentState','Policy_CombinedSingleLimit','InsuredEducationLevel','DateOfIncident','InsuredZipCode']
+    cat_cols_test = ['SeverityOfIncident','IncidentAddress','InsuredRelationship','AuthoritiesContacted','InsuredOccupation','InsurancePolicyState','VehicleMake','TypeOfIncident','TypeOfCollission','CustomerID','InsuredHobbies','VehicleYOM','DateOfPolicyCoverage','InsuredGender','InsurancePolicyNumber','VehicleID','IncidentCity','PropertyDamage','PoliceReport','VehicleModel','IncidentState','Policy_CombinedSingleLimit','InsuredEducationLevel','DateOfIncident','InsuredZipCode']
     
     
     from datetime import datetime
@@ -192,7 +192,7 @@ def main():
     df_test_final["vehicle_age"] = df_test_final["year_of_incident"] - df_test_final["VehicleYOM"]
     df_test_final["VehicleYOM"] = df_test_final["VehicleYOM"].astype("category")
     
-    test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","Country","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport","AmountOfTotalClaim"]
+    test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
     st.dataframe(df_test_final, use_container_width=True)
 
