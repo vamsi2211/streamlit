@@ -161,10 +161,7 @@ def main():
             VehicleYOM = st.text_input("VehicleYOM")
         submitButton = st.form_submit_button(label = 'Submit9')
 
-    test = pd.DataFrame([CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
-    PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
-    InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
-    PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM],\
+    test = pd.DataFrame([CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM],
                  columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,\
     PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,\
     InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,\
