@@ -175,7 +175,7 @@ def main():
     
     
     cat_cols_test = ['SeverityOfIncident','IncidentAddress','InsuredRelationship','AuthoritiesContacted','InsuredOccupation','InsurancePolicyState','VehicleMake','TypeOfIncident','TypeOfCollission','CustomerID','InsuredHobbies','VehicleYOM','DateOfPolicyCoverage','InsuredGender','InsurancePolicyNumber','VehicleID','IncidentCity','PropertyDamage','PoliceReport','VehicleModel','IncidentState','Policy_CombinedSingleLimit','InsuredEducationLevel','DateOfIncident','InsuredZipCode']
-    
+    time_cols = ['DateOfIncident','DateOfPolicyCoverage']
     
     from datetime import datetime
     for i in cat_cols_test:
