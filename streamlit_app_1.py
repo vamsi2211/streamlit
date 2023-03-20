@@ -2,7 +2,6 @@
 import numpy as np
 import pandas as pd
 import pickle
-import pickle
 import streamlit as st
 
 # import json
@@ -195,11 +194,11 @@ def main():
     test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport"]
     df_test_final.drop(test_drop_cols,axis=1,inplace=True)
     def load_object(filename):
-      with open(filename, 'rb') as output:
+      with open(filename, 'r') as output:
         return pickle.load(output)
-    imputer = load_object('https://github.com/vamsi2211/streamlit/blob/092de1d3d7d5623c9b32fda273e4b4d99385c15a/imputer.pkl')
+    imputer = load_object('./imputer.pkl')
     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
-    imp1 = open("imputer1.pkl","rb")
+    imp1 = open("./imputer1.pkl",'rb)
     imputer1=pickle.load(imp1)
     real_test_df_premium_time = pd.DataFrame(imputer1.transform(df_test_final[["PolicyAnnualPremium","IncidentTime"]]),columns = ["PolicyAnnualPremium","IncidentTime"])
     df_test_final.drop(["VehicleMake","Witnesses","InsuredGender","IncidentTime","PolicyAnnualPremium"],axis=1 ,inplace =True)
