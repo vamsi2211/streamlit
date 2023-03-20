@@ -124,45 +124,45 @@ def main():
       with z3:
           CapitalGains = st.text_input("CapitalGains")
       with z4:
-          CapitalLoss = st.text_input("CapitalLoss")
+          CapitalLoss = st.number_input("CapitalLoss",value=48500)
       submitButton = st.form_submit_button(label = 'Submit6')
 
     with st.form(key='columns_in_form7'):
       z1, z2, z3, z4 = st.columns(4)
       with z1:
-          InsurancePolicyNumber = st.text_input("InsurancePolicyNumber")
+          InsurancePolicyNumber = st.number_input("InsurancePolicyNumber",value=110122)
       with z2:
-          CustomerLoyaltyPeriod = st.text_input("CustomerLoyaltyPeriod")
+          CustomerLoyaltyPeriod = st.number_input("CustomerLoyaltyPeriod",value=328)
       with z3:
-          DateOfPolicyCoverage = st.text_input("DateOfPolicyCoverage")
+          DateOfPolicyCoverage = st.text_input("DateOfPolicyCoverage",'2014-10-17')
       with z4:
-          InsurancePolicyState = st.text_input("InsurancePolicyState")
+          InsurancePolicyState = st.text_input("InsurancePolicyState",value='State3')
       submitButton = st.form_submit_button(label = 'Submit7')
 
     with st.form(key='columns_in_form8'):
       z1, z2, z3, z4, z5 = st.columns(5)
       with z1:
-          Policy_CombinedSingleLimit = st.text_input("Policy_CombinedSingleLimit")
+          Policy_CombinedSingleLimit = st.text_input("Policy_CombinedSingleLimit",value='250/500')
       with z2:
-          Policy_Deductible = st.text_input("Policy_Deductible")
+          Policy_Deductible = st.number_input("Policy_Deductible",value=1000)
       with z3:
-          PolicyAnnualPremium = st.text_input("PolicyAnnualPremium")
+          PolicyAnnualPremium = st.number_input("PolicyAnnualPremium",value=1406.91)	
       with z4:
-          UmbrellaLimit = st.text_input("UmbrellaLimit")
+          UmbrellaLimit = st.number_input("UmbrellaLimit",value=0)
       with z5:
-          InsuredRelationship = st.text_input("InsuredRelationship")
+          InsuredRelationship = st.text_input("InsuredRelationship",value='husband')
       submitButton = st.form_submit_button(label = 'Submit8')
 
     with st.form(key='columns_in_form9'):
       z1, z2, z3, z4 = st.columns(4)
       with z1:
-          VehicleID = st.text_input("VehicleID")
+          VehicleID = st.text_input("VehicleID",value='Vehicle26917')
       with z2:
-          VehicleModel = st.text_input("VehicleModel")
+          VehicleModel = st.text_input("VehicleModel",value='Audi')
       with z3:
-          VehicleMake = st.text_input("VehicleMake")
+          VehicleMake = st.text_input("VehicleMake",value='A5')
       with z4:
-          VehicleYOM = st.text_input("VehicleYOM")
+          VehicleYOM = st.number_input("VehicleYOM",value=2008)
       submitButton = st.form_submit_button(label = 'Submit9')
     test = pd.DataFrame([CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM],columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM'.split(','))
     st.dataframe(test, use_container_width=True)
