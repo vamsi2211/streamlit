@@ -45,7 +45,7 @@ VehicleModel,VehicleMake,VehicleYOM]])
     return prediction
 
 def main():
-    =st.title("Insurer Details")
+    st.title("Insurer Details")
     with st.form(key='columns_in_form1'):
         d1, d2, d3, d4 = st.columns(4)
         with d1:
