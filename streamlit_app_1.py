@@ -53,78 +53,78 @@ def main():
     with st.form(key='columns_in_form1'):
       d1, d2, d3, d4 = st.columns(4)
       with d1:
-          CustomerID = st.text_input("CustomerID",value=1001)
+          CustomerID = st.text_input("CustomerID",value='Cust10000'	)
       with d2:
-          DateOfIncident = st.text_input("DateOfIncident")
+          DateOfIncident = st.text_input("DateOfIncident",value='2015-02-03')
       with d3:
-          TypeOfIncident = st.text_input("TypeOfIncident")
+          TypeOfIncident = st.text_input("TypeOfIncident",value='Multi-vehicle Collision')
       with d4:
-          TypeOfCollission = st.text_input("TypeOfCollission")
+          TypeOfCollission = st.text_input("TypeOfCollission",value='Side Collision')
       submitButton = st.form_submit_button(label = 'Submit1')
 
 
     with st.form(key='columns_in_form2'):
       c1, c2, c3, c4, c5 = st.columns(5)
       with c1:
-          SeverityOfIncident = st.text_input("SeverityOfIncident")
+          SeverityOfIncident = st.text_input("SeverityOfIncident",value='Total Loss'	)
       with c2:
-          AuthoritiesContacted = st.text_input("AuthoritiesContacted")
+          AuthoritiesContacted = st.text_input("AuthoritiesContacted",value='Police')
       with c3:
-          IncidentState = st.text_input("IncidentState")
+          IncidentState = st.text_input("IncidentState",value='State7')
       with c4:
-          IncidentCity = st.text_input("IncidentCity")
+          IncidentCity = st.text_input("IncidentCity",value='City1')
       with c5:
-          IncidentAddress = st.text_input("IncidentAddress")
+          IncidentAddress = st.text_input("IncidentAddress",value='Location 1311')
       submitButton = st.form_submit_button(label = 'Submit2')
 
     with st.form(key='columns_in_form3'):
       b1, b2, b3, b4 = st.columns(4)
       with b1:
-          IncidentTime = st.text_input("IncidentTime")
+          IncidentTime = st.number_input("IncidentTime",value=17)
       with b2:
-          NumberOfVehicles = st.text_input("NumberOfVehicles")
+          NumberOfVehicles = st.number_input("NumberOfVehicles",value=3)
       with b3:
-          PropertyDamage = st.text_input("PropertyDamage")
+          PropertyDamage = st.text_input("PropertyDamage",value='YES')
       with b4:
-          BodilyInjuries = st.text_input("BodilyInjuries")
+          BodilyInjuries = st.number_input("BodilyInjuries",value=1)
       submitButton = st.form_submit_button(label = 'Submit3')
 
     with st.form(key='columns_in_form4'):
       a1, a2, a3, a4, a5, a6 = st.columns(6)
       with a1:
-          Witnesses = st.text_input("Witnesses")
+          Witnesses = st.number_input("Witnesses",value=46013)
       with a2:
-          PoliceReport = st.text_input("PoliceReport")
+          PoliceReport = st.text_input("PoliceReport",value='YES')
       with a3:
-          AmountOfInjuryClaim = st.text_input("AmountOfInjuryClaim")
+          AmountOfInjuryClaim = st.number_input("AmountOfInjuryClaim",value=13417)
       with a4:
-          AmountOfPropertyClaim = st.text_input("AmountOfPropertyClaim")
+          AmountOfPropertyClaim = st.number_input("AmountOfPropertyClaim",value=6071)
       with a5:
-          AmountOfVehicleDamage = st.text_input("AmountOfVehicleDamage")
+          AmountOfVehicleDamage = st.number_input("AmountOfVehicleDamage",value=46013)
       submitButton = st.form_submit_button(label = 'Submit4')
 
     with st.form(key='columns_in_form5'):
       z1, z2, z3, z4 = st.columns(4)
       with z1:
-          InsuredAge = st.text_input("InsuredAge")
+          InsuredAge = st.number_input("InsuredAge",value=35)
       with z2:
-          InsuredZipCode = st.text_input("InsuredZipCode")
+          InsuredZipCode = st.text_input("InsuredZipCode",value='454776')
       with z3:
-          InsuredGender = st.text_input("InsuredGender")
+          InsuredGender = st.text_input("InsuredGender",value='MALE')
       with z4:
-          InsuredEducationLevel = st.text_input("InsuredEducationLevel")
+          InsuredEducationLevel = st.text_input("InsuredEducationLevel",value='JD')
       submitButton = st.form_submit_button(label = 'Submit5')
 
     with st.form(key='columns_in_form6'):
       z1, z2, z3, z4 = st.columns(4)
       with z1:
-          InsuredOccupation = st.text_input("InsuredOccupation")
+          InsuredOccupation = st.text_input("InsuredOccupation",value='armed-forces')
       with z2:
-          InsuredHobbies = st.text_input("InsuredHobbies")
+          InsuredHobbies = st.text_input("InsuredHobbies",value='movies')
       with z3:
-          CapitalGains = st.text_input("CapitalGains")
+          CapitalGains = st.number_input("CapitalGains",value=56700)
       with z4:
-          CapitalLoss = st.number_input("CapitalLoss",value=48500)
+          CapitalLoss = st.number_input("CapitalLoss",value=-48500)
       submitButton = st.form_submit_button(label = 'Submit6')
 
     with st.form(key='columns_in_form7'):
