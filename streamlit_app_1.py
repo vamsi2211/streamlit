@@ -207,11 +207,11 @@ def main():
 #     nom_cols = ["TypeOfIncident","TypeOfCollission","AuthoritiesContacted","InsuredOccupation","InsuredHobbies","IncidentCity","IncidentState","InsurancePolicyState","InsuredGender","InsuredRelationship",'Policy_CombinedSingleLimit',"PropertyDamage",]
 #     num_cols = [ "AmountOfInjuryClaim","AmountOfPropertyClaim","InsuredAge","CustomerLoyaltyPeriod","Policy_Deductible","PolicyAnnualPremium","IncidentTime","AmountOfVehicleDamage" ,"CapitalGains","CapitalLoss","UmbrellaLimit"]
     st.dataframe(df_test_final, use_container_width=True)
-
-    result=f"{CustomerID} seems to be ---{np.random.rand('Fraud, 'Not Fraud')}')
+    import random
+    result=random.choices(['Fraud','NotFraud, weights = [10, 1, 1], k = 1)
     if st.button("Predict"):
 #     result=predict_note_authentication(CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfTotalClaim,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge, InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,Country,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,ReportedFraud,VehicleID,VehicleModel,VehicleMake,VehicleYOM)
-      st.success('The output is {}'.format(result))
+      st.success(f'Result for {CustomerID} {result}')
        
     
 
