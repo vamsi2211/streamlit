@@ -52,7 +52,7 @@ def main():
     with st.form(key='columns_in_form1'):
       d1, d2, d3, d4 = st.columns(4)
       with d1:
-          CustomerID = st.text_input("CustomerID"	)
+          CustomerID = st.text_input("CustomerID"value='Cust10000')
       with d2:
           DateOfIncident = st.text_input("DateOfIncident",value='2015-02-03')
       with d3:
