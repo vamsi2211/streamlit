@@ -165,18 +165,62 @@ def main():
           VehicleYOM = st.text_input("VehicleYOM",value=2008)
       submitButton = st.form_submit_button(label = 'Submit9')
     df_test_final = pd.DataFrame([[CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM]],columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM'.split(','))
-    m=pd.DataFrame(df_test_final.dtypes,columns=['type'])
-    st.dataframe(m, use_container_width=True)
-    st.dataframe(df_test_final, use_container_width=True)
     # assigning int and removing insured zip code from int float cols to num_cols
 
     int_cols = list(df_test_final.select_dtypes(include = "int").columns)
     int_cols.remove("InsuredZipCode")
     int_cols.remove("InsurancePolicyNumber")
-
-
     float_cols = list(df_train_final.select_dtypes(include = "float").columns)
     num_cols = int_cols+float_cols
+    
+    
+    cat_cols_test = ['SeverityOfIncident',
+   'IncidentAddress',
+   'InsuredRelationship',
+   'AuthoritiesContacted',
+   'InsuredOccupation',
+   'InsurancePolicyState',
+   'VehicleMake',
+   'TypeOfIncident',
+   'TypeOfCollission',
+   'CustomerID',
+   'InsuredHobbies',
+   'VehicleYOM',
+   'DateOfPolicyCoverage',
+   'Country',
+   'InsuredGender',
+   'InsurancePolicyNumber',
+   'VehicleID',
+   'IncidentCity',
+   'PropertyDamage',
+   'PoliceReport',
+   'VehicleModel',
+   'IncidentState',
+   'Policy_CombinedSingleLimit',
+   'InsuredEducationLevel',
+   'DateOfIncident',
+   'InsuredZipCode']
+    
+    
+    from datetime import datetime
+    for i in cat_cols_test:
+        df_test_final[i] = df_test_final[i].astype("category") 
+    for i in num_cols:
+        df_test_final[i] = df_test_final[i].astype("float")
+    for i in time_cols:
+        df_test_final[i] = pd.to_datetime(df_test_final[i])
+        
+    df_test_final["diff_between_incident_policy_taken"] = df_test_final["DateOfIncident"].dt.year - df_test_final["DateOfPolicyCoverage"].dt.year
+    
+    df_test_final["year_of_incident"] = df_test_final["DateOfIncident"].dt.year
+    df_test_final["VehicleYOM"] = df_test_final["VehicleYOM"].astype("int")
+    df_test_final["vehicle_age"] = df_test_final["year_of_incident"] - df_test_final["VehicleYOM"]
+    df_test_final["VehicleYOM"] = df_test_final["VehicleYOM"].astype("category")
+    
+    test_drop_cols = ["CustomerID","InsurancePolicyNumber","VehicleID","Country","DateOfIncident","DateOfPolicyCoverage","VehicleYOM","PoliceReport","AmountOfTotalClaim"]
+    df_test_final.drop(test_drop_cols,axis=1,inplace=True)
+    st.dataframe(df_test_final, use_container_width=True)
+
 
 
     result=""
