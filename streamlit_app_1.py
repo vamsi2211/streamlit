@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import pickle
 import pickle
-import streamlit as st 
+import streamlit as st
 
 # import json
 # import requests
@@ -165,7 +165,8 @@ def main():
           VehicleYOM = st.text_input("VehicleYOM",value=2008)
       submitButton = st.form_submit_button(label = 'Submit9')
     df_test_final = pd.DataFrame([[CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM]],columns='CustomerID,DateOfIncident,TypeOfIncident,TypeOfCollission,SeverityOfIncident,AuthoritiesContacted,IncidentState,IncidentCity,IncidentAddress,IncidentTime,NumberOfVehicles,PropertyDamage,BodilyInjuries,Witnesses,PoliceReport,AmountOfInjuryClaim,AmountOfPropertyClaim,AmountOfVehicleDamage,InsuredAge,InsuredZipCode,InsuredGender,InsuredEducationLevel,InsuredOccupation,InsuredHobbies,CapitalGains,CapitalLoss,InsurancePolicyNumber,CustomerLoyaltyPeriod,DateOfPolicyCoverage,InsurancePolicyState,Policy_CombinedSingleLimit,Policy_Deductible,PolicyAnnualPremium,UmbrellaLimit,InsuredRelationship,VehicleID,VehicleModel,VehicleMake,VehicleYOM'.split(','))
-    st.dataframe(pd.DataFrame(df_test_final.dtypes,columns=['col','type'])['type'], use_container_width=True)
+    m=pd.DataFrame(df_test_final.dtypes,columns=['col','type'])
+    st.dataframe(m, use_container_width=True)
     st.dataframe(test, use_container_width=True)
     # assigning int and removing insured zip code from int float cols to num_cols
 
