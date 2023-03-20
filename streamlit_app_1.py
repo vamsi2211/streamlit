@@ -197,7 +197,7 @@ def main():
     def load_object(filename):
       with open(filename, 'rb') as output:
         return pickle.load(output)
-    imputer = load_object('imputer.pkl')
+    imputer = load_object('https://github.com/vamsi2211/streamlit/blob/092de1d3d7d5623c9b32fda273e4b4d99385c15a/imputer.pkl')
     real_test_df_vehiclemake_witness_gender = pd.DataFrame(imputer.transform(df_test_final[["VehicleMake","Witnesses","InsuredGender"]]),columns = ["VehicleMake","Witnesses","InsuredGender"])
     imp1 = open("imputer1.pkl","rb")
     imputer1=pickle.load(imp1)
