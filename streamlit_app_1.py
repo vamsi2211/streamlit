@@ -49,16 +49,16 @@ VehicleModel,VehicleMake,VehicleYOM]])
 def main():
     st.title("Insurer Details")
     with st.form(key='columns_in_form1'):
-    d1, d2, d3, d4 = st.columns(4)
-    with d1:
-        CustomerID = st.text_input("CustomerID")
-    with d2:
-        DateOfIncident = st.text_input("DateOfIncident")
-    with d3:
-        TypeOfIncident = st.text_input("TypeOfIncident")
-    with d4:
-        TypeOfCollission = st.text_input("TypeOfCollission")
-    submitButton = st.form_submit_button(label = 'Submit1')
+      d1, d2, d3, d4 = st.columns(4)
+      with d1:
+          CustomerID = st.text_input("CustomerID")
+      with d2:
+          DateOfIncident = st.text_input("DateOfIncident")
+      with d3:
+          TypeOfIncident = st.text_input("TypeOfIncident")
+      with d4:
+          TypeOfCollission = st.text_input("TypeOfCollission")
+      submitButton = st.form_submit_button(label = 'Submit1')
 
 
     with st.form(key='columns_in_form2'):
