@@ -98,9 +98,9 @@ def main():
       with a4:
           AmountOfPropertyClaim = st.text_input("AmountOfPropertyClaim")
       with a5:
-          AmountOfPropertyClaim = st.text_input("AmountOfPropertyClaim")
-      with a6:
-          AmountOfVehicleDamage = st.text_input("AmountOfVehicleDamage")
+#           AmountOfPropertyClaim = st.text_input("AmountOfPropertyClaim")
+#       with a6:
+#           AmountOfVehicleDamage = st.text_input("AmountOfVehicleDamage")
       submitButton = st.form_submit_button(label = 'Submit4')
 
     with st.form(key='columns_in_form5'):
