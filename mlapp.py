@@ -72,9 +72,9 @@ uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=Tru
 for uploaded_file in uploaded_files:
     if 'train' in uploaded_file.name:
       train = pd.read_csv(uploaded_file)
-    if 'test' in uploaded_file.name
+    if 'test' in uploaded_file.name:
        test = pd.read_csv(uploaded_file)
-    if 'sumis' in uploaded_file.name
+    if 'sumis' in uploaded_file.name:
        subm = pd.read_csv(uploaded_file)
     st.dataframe(pd.read_csv(uploaded_file), use_container_width=True)
 
