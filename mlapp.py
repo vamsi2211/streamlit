@@ -73,7 +73,7 @@ for uploaded_file in uploaded_files:
     bytes_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
     st.write(bytes_data)
-    st.write(upload_file)
+    st.dataframe(uploaded_file, use_container_width=True)
 
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
