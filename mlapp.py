@@ -73,14 +73,7 @@ for uploaded_file in uploaded_files:
     bytes_data = uploaded_file.read()
     st.write("filename:", uploaded_file.name)
     st.write(bytes_data)
-
-spectra = st.file_uploader("upload file", type={"csv",'xlsx'})
-if spectra is not None:
-    train = pd.read_csv(spectra)
-else:
-    train=pd.DataFrame()
-if train!=None:
-  st.write(train)
+    st.write(upload_file)
 
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
