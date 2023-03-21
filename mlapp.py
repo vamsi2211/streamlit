@@ -68,12 +68,19 @@ def type_cast(data,cat=None,num=None,da_ti=None):
 st.set_page_config(page_title="MLAPP",page_icon="🧑‍💻", layout="centered")
 st.text("ML APP1")
 
+uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
+for uploaded_file in uploaded_files:
+    bytes_data = uploaded_file.read()
+    st.write("filename:", uploaded_file.name)
+    st.write(bytes_data)
+
 spectra = st.file_uploader("upload file", type={"csv",'xlsx'})
 if spectra is not None:
     train = pd.read_csv(spectra)
 else:
     train=pd.DataFrame()
-st.write(train)
+if train!=None:
+  st.write(train)
 
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
