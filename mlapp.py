@@ -70,9 +70,13 @@ st.text("ML APP1")
 
 uploaded_files = st.file_uploader("Choose a CSV file", accept_multiple_files=True)
 for uploaded_file in uploaded_files:
-    st.write("filename:", uploaded_file.name)
-    df = pd.read_csv(uploaded_file)
-    st.dataframe(df, use_container_width=True)
+    if 'train' in uploaded_file.name:
+      train = pd.read_csv(uploaded_file)
+    if 'test' in uploaded_file.name
+       test = pd.read_csv(uploaded_file)
+    if 'sumis' in uploaded_file.name
+       subm = pd.read_csv(uploaded_file)
+    st.dataframe(pd.read_csv(uploaded_file), use_container_width=True)
 
 train = pd.DataFrame({'col1':list(range(10)),
                       'col2':list(range(10)),
